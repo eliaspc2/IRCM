@@ -1,57 +1,54 @@
-# Picnic Invaders
+# It’s Raining Coins and Monsters (IRCM)
 
-Projeto final desenvolvido no âmbito do **Curso de Programação em Python (IEFP)**. Este jogo não é apenas um exercício académico: é a prova prática da minha capacidade de conceber, estruturar e entregar um projeto completo em **Python + Pygame**, unindo programação, lógica de jogo e criatividade.
+**Capstone Project – Programming MOOC 2025 (University of Helsinki, 10 ECTS)**
+Final project developed for the **Introduction to Programming** (5 ECTS, \~135h) and **Advanced Course in Programming** (5 ECTS, \~135h) modules. These MOOCs are internationally recognized, university-level courses delivered by the University of Helsinki.
+
+Due to course restrictions, the entire game had to be implemented in a **single Python file (`main.py`)**, and only the **provided images (`coin.png`, `monster.png`, `robot.png`, `door.png`)** could be used. These constraints highlight my ability to design, structure, and deliver a complete, functional project even under tight limitations.
 
 ---
 
-## Visão geral
+## Overview
 
 * **Engine:** Pygame
-* **Resolução da janela:** 1120×747 @ 60 FPS
-* **Estados:** Splash → Jogo → Fim (vitória/derrota)
-* **Plataformas:** Windows, macOS, Linux (Python 3.10+ recomendado)
+* **Window resolution:** 640×420 @ 60 FPS
+* **States:** Intro → Game → Game Over
+* **Platforms:** Windows, macOS, Linux (Python 3.10+ recommended)
 
 ---
 
-## O que demonstra este projeto
+## What this project demonstrates
 
-* **Arquitetura modular**: código organizado em múltiplos ficheiros (`player`, `enemy`, `bullet`, `configs`, etc.), mostrando boas práticas de estrutura.
-* **Orientação a objetos**: reutilização de classes base, herança e encapsulamento.
-* **Gestão de assets**: carregamento dinâmico de imagens e sons.
-* **Mecânicas de jogo**: colisões pixel-perfect, cadência adaptativa de disparos, sistema de vidas e estados do jogo.
-* **Ciclo completo**: desde splash screen até vitória/derrota, com transição fluida e feedback audiovisual.
+* **Self-contained code:** all classes and logic in a single file, as required by the course.
+* **Object-Oriented Programming:** `Player` and `Drop` classes (for coins and enemies) with reusable logic and pixel-perfect collision detection via masks.
+* **Game management:** main loop handling events, updates, and rendering.
+* **Dynamic difficulty:** increasing frequency and speed of enemies as the score grows.
+* **User feedback:** real-time scoring, intro message, Game Over screen, and reset with F2.
 
-Este projeto mostra não só a minha capacidade técnica, mas também atenção ao detalhe, organização e preocupação com a experiência do utilizador.
-
----
-
-## Jogabilidade
-
-* **Objetivo:** eliminar todos os inimigos antes que as vidas acabem.
-* **Vidas do jogador:** 3
-* **Inimigos:**
-
-  * **Fly** (mosca) – 2 vidas
-  * **Ant** (formiga) – 1 vida
-* **Tiro do jogador:** *napkin* (sobe)
-* **Tiro inimigo:** *poo* (desce)
-* **Dificuldade dinâmica:** a cadência dos tiros inimigos acelera à medida que restam menos inimigos.
-
-### Controlos
-
-* **Mover:** A / ← (esquerda), D / → (direita)
-* **Disparar:** Espaço
-* **Sair:** fechar janela
+This project shows how it is possible to deliver a complete, playable experience even under strict technical and pedagogical restrictions.
 
 ---
 
-## Requisitos
+## Gameplay
+
+* **Goal:** catch coins, avoid monsters.
+* **Scoring:** +1 per collected coin, −1 per missed coin.
+* **Game Over:** collision with a monster.
+
+### Controls
+
+* **Move:** A / ← (left), D / → (right)
+* **New game:** F2
+* **Exit:** Esc or close window
+
+---
+
+## Requirements
 
 * Python 3.10+ (3.12 OK)
 * Pygame ≥ 2.5
-* Assets nas pastas `imgs/` e `sounds/`
+* Mandatory assets in the same folder as `main.py`: `coin.png`, `monster.png`, `robot.png`, `door.png`
 
-### Instalação
+### Installation
 
 ```bash
 python -m venv .venv
@@ -64,7 +61,7 @@ pip install --upgrade pip
 pip install pygame
 ```
 
-### Executar
+### Run
 
 ```bash
 python main.py
@@ -72,59 +69,52 @@ python main.py
 
 ---
 
-## Estrutura do projeto
+## Project structure
 
 ```
 .
-├─ main.py              # Loop principal, ecrãs e fluxo de jogo
-├─ configs.py           # Constantes e definições
-├─ character.py         # Base para entidades
-├─ player.py            # Lógica do jogador
-├─ enemy.py             # Lógica dos inimigos
-├─ bullet.py            # Projéteis genéricos
-├─ imgs/                # Sprites
-└─ sounds/              # Áudio
+└─ main.py     # Single file with all logic, classes, and game loop
 ```
 
 ---
 
-## Diferenciais de valor
+## Value highlights
 
-* **Clareza do código**: preparado para ser lido e expandido.
-* **Flexibilidade**: `configs.py` permite alterar facilmente regras, velocidades e dificuldade.
-* **Escalabilidade**: formação de ondas de inimigos, introdução de novos tipos e power-ups.
-* **Profissionalismo**: README documentado, organização modular, código comentado.
+* **Strict compliance with requirements:** full project in a single file and only with provided assets.
+* **Best practices under constraints:** clear classes, logical separation between player, coins, and enemies.
+* **Creativity under limitations:** simple yet effective concept, playable and scalable.
+* **Professionalism:** commented, organized code ready for future reuse in larger projects.
 
-> Este não é apenas um jogo, é uma demonstração do que consigo construir como programador Python.
-
----
-
-## Roadmap (próximos passos)
-
-* Sistema de pontuação e leaderboard
-* Power-ups (escudos, tiro duplo, etc.)
-* Novos padrões de inimigos
-* Integração com comandos de jogo (gamepad)
+> This game proves I can deliver concrete results even in constrained environments, focusing on clarity, functionality, and user experience.
 
 ---
 
-## Licença e créditos
+## Roadmap (future improvements)
 
-* **Código:** André Câmara
-* **Curso:** Projeto final – IEFP, Programação em Python
-* **Assets:** Arte e sons a definir (ou substituíveis pelo utilizador)
+* Levels with progressive difficulty
+* Power-ups (extra lives, coin magnets)
+* Custom graphics and sounds
+* High score ranking
 
 ---
 
-## Começa já
+## License and credits
+
+* **Code:** André Câmara
+* **Course:** Final project – Programming MOOC 2025 (University of Helsinki, 10 ECTS)
+* **Assets:** provided images (`coin.png`, `monster.png`, `robot.png`, `door.png`)
+
+---
+
+## Quick start
 
 1. `pip install pygame`
-2. Garante as pastas `imgs/` e `sounds/`
+2. Place `coin.png`, `monster.png`, `robot.png`, and `door.png` in the same folder as `main.py`
 3. `python main.py`
-4. Diverte-te!
+4. Have fun!
 
 ---
 
-### Sobre mim
+### About me
 
-Sou programador em fase de transição de carreira, focado em Python e desenvolvimento de software. Este projeto é a primeira de muitas provas do meu compromisso com **código limpo, funcional e criativo**.
+I am a career-changer programmer, focused on Python and software development. This project was my final assignment in the **Programming MOOC 2025 (University of Helsinki, 10 ECTS)**, showcasing my **resilience, technical ability, and passion for clean, functional code**.
